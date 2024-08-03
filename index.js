@@ -10,12 +10,14 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
-const corsOptions = {
-  origin:["https://auth-frontend-alpha-nine.vercel.app/"],
-  methods:["GET","POST","PUT","DELETE"],
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-};
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: 'https://auth-frontend-alpha-nine.vercel.app', // Allow this origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow credentials
+  optionsSuccessStatus: 204
+}));
+
 
 // Middleware
 app.use(cookieParser());
