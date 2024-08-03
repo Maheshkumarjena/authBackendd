@@ -11,7 +11,8 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3001',
+  origin:["https://auth-frontend-alpha-nine.vercel.app/"],
+  methods:["GET","POST","PUT","DELETE"],
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 };
 app.use(cors(corsOptions));
