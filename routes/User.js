@@ -24,7 +24,9 @@ const verifyUser = async (req, res, next) => {
 // Signup route
 router.post('/signup', async (req, res) => {
   try {
-    const { userName, email, password } = req.body.user;
+    const userName=req.body.user.userName;
+    const email=req.body.user.email;
+    const password=req.body.user.password;
 
     if (!userName || !email || !password) {
       return res.status(400).json({ message: 'Please enter all fields' });
