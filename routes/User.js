@@ -24,7 +24,7 @@ const verifyUser = async (req, res, next) => {
 // Signup route
 router.post('/signup', async (req, res) => {
   try {
-    const userName=req.body.user.userName;
+    const userName=req.body.user.name;
     const email=req.body.user.email;
     const password=req.body.user.password;
 
